@@ -1,0 +1,69 @@
+{
+  "name": "readqronscreen",
+  "version": "1.0.0",
+  "author": "Masashi.Ohashi",
+  "description": "QR code reader",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "rimraf dist && run-p dev:webpack dev:electron",
+    "build": "cross-env NODE_ENV=\"production\" webpack --progress",
+    "dev:tsc": "tsc -w -p tsconfig.node.json",
+    "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
+    "dev:electron": "wait-on ./dist/index.html ./dist/main.js && electronmon .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "cross-env NODE_ENV=\"production\" electron-forge make"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "electronmon": {
+    "patterns": [
+      "dist/**/*"
+    ]
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.0",
+    "@electron-forge/maker-deb": "^7.3.0",
+    "@electron-forge/maker-rpm": "^7.3.0",
+    "@electron-forge/maker-squirrel": "^7.3.0",
+    "@electron-forge/maker-zip": "^7.3.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.0",
+    "@electron-forge/plugin-fuses": "^7.3.0",
+    "@types/node": "^20.11.17",
+    "@types/react": "^18.2.23",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.8.1",
+    "electron": "^26.2.2",
+    "electronmon": "^2.0.2",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "wait-on": "^7.0.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.18",
+    "@mui/material": "^5.14.18",
+    "electron-squirrel-startup": "^1.0.0",
+    "jsqr": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-image-crop": "^11.0.5"
+  }
+}
